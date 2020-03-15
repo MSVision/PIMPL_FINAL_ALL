@@ -1,0 +1,2 @@
+serviceClass: de.fhwedel.pimpl.services.PIMPLService
+path: 790F456ED32E1FC33D9FEEFEEB7B60FE.gwt.rpc

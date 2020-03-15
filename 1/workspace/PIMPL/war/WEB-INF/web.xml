@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>pimplServlet</servlet-name>
+    <servlet-class>de.fhwedel.pimpl.server.PIMPLServiceImpl</servlet-class>
+    <load-on-startup>0</load-on-startup>
+ </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>pimplServlet</servlet-name>
+    <url-pattern>/pimpl/service</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>PIMPL.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>

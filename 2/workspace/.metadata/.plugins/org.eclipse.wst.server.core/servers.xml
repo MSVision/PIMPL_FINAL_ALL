@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server at localhost" name="Tomcat v9.0 Server at localhost" runtime-id="Apache Tomcat v9.0" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="3">
+    <list key="modules" value0="CustomerService::org.eclipse.jst.jee.server:CustomerService::jst.web::3.0" value1="ShippingService::org.eclipse.jst.jee.server:ShippingService::jst.web::4.0"/>
+  </server>
+  <server hostname="localhost" id="Ode v1.x Server at localhost" name="Ode v1.x Server at localhost" runtime-id="Apache Ode 1.x Runtime" server-type="org.eclipse.jst.server.generic.apache.ode.1x" server-type-id="org.eclipse.jst.server.generic.apache.ode.1x" start-timeout="480" stop-timeout="60" timestamp="4">
+    <map key="generic_server_instance_properties"/>
+    <list key="Generic_Server_Modules_List" value0="org.eclipse.bpel.runtimes.module.moduleFactory:CheckReputation" value1="org.eclipse.bpel.runtimes.module.moduleFactory:ShippingTask"/>
+    <list key="modules" value0="CheckReputation::org.eclipse.bpel.runtimes.module.moduleFactory:CheckReputation::bpel.module::2.0" value1="ShippingTask::org.eclipse.bpel.runtimes.module.moduleFactory:ShippingTask::bpel.module::2.0"/>
+  </server>
+</servers>

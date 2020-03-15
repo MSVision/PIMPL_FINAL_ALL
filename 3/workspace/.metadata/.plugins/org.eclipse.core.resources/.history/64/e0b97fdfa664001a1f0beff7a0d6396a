@@ -1,0 +1,13 @@
+[
+  [
+    "name" : "
+Assign inventory to order item",
+    "parameters" : [
+    	"contractPosition" : new ObjectDataType()
+    ],
+    "results" : [
+    	"result" : new ObjectDataType()
+    ],
+    "displayName" : "Lagerbestand zu Auftragsposition zuordnen"
+  ]
+]

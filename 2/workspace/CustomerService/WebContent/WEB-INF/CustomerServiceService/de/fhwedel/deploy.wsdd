@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from CustomerServiceService WSDL service -->
+
+  <service name="CustomerService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://fhwedel.de"/>
+      <parameter name="wsdlServiceElement" value="CustomerServiceService"/>
+      <parameter name="schemaQualified" value="http://fhwedel.de"/>
+      <parameter name="wsdlServicePort" value="CustomerService"/>
+      <parameter name="className" value="de.fhwedel.CustomerService"/>
+      <parameter name="wsdlPortType" value="CustomerService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://fhwedel.de" name="log" qname="operNS:log" soapAction="">
+        <parameter xmlns:pns="http://fhwedel.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:s" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://fhwedel.de" name="updateCustomer" qname="operNS:updateCustomer" soapAction="">
+        <parameter xmlns:pns="http://fhwedel.de" xmlns:tns="http://fhwedel.de" qname="pns:c" type="tns:Customer"/>
+        <fault xmlns:fns="http://fhwedel.de" xmlns:tns="http://fhwedel.de" name="UpdateFailed" qname="fns:fault" class="de.fhwedel.UpdateFailed" type="tns:UpdateFailed"/>
+      </operation>
+      <operation xmlns:operNS="http://fhwedel.de" xmlns:retNS="http://fhwedel.de" xmlns:rtns="http://fhwedel.de" name="getCustomerByName" qname="operNS:getCustomerByName" returnQName="retNS:getCustomerByNameReturn" returnType="rtns:Customer" soapAction="">
+        <parameter xmlns:pns="http://fhwedel.de" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+        <fault xmlns:fns="http://fhwedel.de" xmlns:tns="http://fhwedel.de" name="UnknownCustomer" qname="fns:fault1" class="de.fhwedel.UnknownCustomer" type="tns:UnknownCustomer"/>
+      </operation>
+      <operation xmlns:operNS="http://fhwedel.de" xmlns:retNS="http://fhwedel.de" xmlns:rtns="http://fhwedel.de" name="getCustomerReputation" qname="operNS:getCustomerReputation" returnQName="retNS:getCustomerReputationReturn" returnType="rtns:Customer" soapAction="">
+        <parameter xmlns:pns="http://fhwedel.de" xmlns:tns="http://fhwedel.de" qname="pns:c" type="tns:Customer"/>
+      </operation>
+      <parameter name="allowedMethods" value="log getCustomerByName updateCustomer getCustomerReputation"/>
+
+      <typeMapping xmlns:ns="http://fhwedel.de" qname="ns:Customer" type="java:de.fhwedel.Customer" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://fhwedel.de" qname="ns:UpdateFailed" type="java:de.fhwedel.UpdateFailed" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://fhwedel.de" qname="ns:UnknownCustomer" type="java:de.fhwedel.UnknownCustomer" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

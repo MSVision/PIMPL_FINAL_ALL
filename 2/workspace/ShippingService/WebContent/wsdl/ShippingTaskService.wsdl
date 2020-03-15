@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://fhwedel.de" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://fhwedel.de" xmlns:intf="http://fhwedel.de" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://fhwedel.de" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="log">
+    <complexType>
+     <sequence>
+      <element name="s" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logResponse">
+    <complexType/>
+   </element>
+   <element name="updateCustomer">
+    <complexType>
+     <sequence>
+      <element name="c" type="impl:Customer"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Customer">
+    <sequence>
+     <element name="cust_no" nillable="true" type="xsd:string"/>
+     <element name="id" nillable="true" type="xsd:int"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="reputation" nillable="true" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <element name="updateCustomerResponse">
+    <complexType/>
+   </element>
+   <complexType name="UpdateFailed">
+    <sequence/>
+   </complexType>
+   <element name="fault" type="impl:UpdateFailed"/>
+   <element name="getCustomerByName">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getCustomerByNameResponse">
+    <complexType>
+     <sequence>
+      <element name="getCustomerByNameReturn" type="impl:Customer"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="UnknownCustomer">
+    <sequence/>
+   </complexType>
+   <element name="fault1" type="impl:UnknownCustomer"/>
+   <element name="getCustomerReputation">
+    <complexType>
+     <sequence>
+      <element name="c" type="impl:Customer"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getCustomerReputationResponse">
+    <complexType>
+     <sequence>
+      <element name="getCustomerReputationReturn" type="impl:Customer"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="logResponse">
+
+      <wsdl:part element="impl:logResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateCustomerRequest">
+
+      <wsdl:part element="impl:updateCustomer" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateCustomerResponse">
+
+      <wsdl:part element="impl:updateCustomerResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="UnknownCustomer">
+
+      <wsdl:part element="impl:fault1" name="fault">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCustomerReputationRequest">
+
+      <wsdl:part element="impl:getCustomerReputation" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCustomerByNameRequest">
+
+      <wsdl:part element="impl:getCustomerByName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCustomerByNameResponse">
+
+      <wsdl:part element="impl:getCustomerByNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logRequest">
+
+      <wsdl:part element="impl:log" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdateFailed">
+
+      <wsdl:part element="impl:fault" name="fault">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCustomerReputationResponse">
+
+      <wsdl:part element="impl:getCustomerReputationResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ShippingTaskService">
+
+      <wsdl:operation name="log">
+
+         <wsdl:input message="impl:logRequest" name="logRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:logResponse" name="logResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateCustomer">
+
+         <wsdl:input message="impl:updateCustomerRequest" name="updateCustomerRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateCustomerResponse" name="updateCustomerResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:UpdateFailed" name="UpdateFailed">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCustomerByName">
+
+         <wsdl:input message="impl:getCustomerByNameRequest" name="getCustomerByNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCustomerByNameResponse" name="getCustomerByNameResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:UnknownCustomer" name="UnknownCustomer">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCustomerReputation">
+
+         <wsdl:input message="impl:getCustomerReputationRequest" name="getCustomerReputationRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCustomerReputationResponse" name="getCustomerReputationResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ShippingTaskServiceSoapBinding" type="impl:ShippingTaskService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="log">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="logRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="logResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateCustomer">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateCustomerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateCustomerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="UpdateFailed">
+
+            <wsdlsoap:fault name="UpdateFailed" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCustomerByName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCustomerByNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCustomerByNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="UnknownCustomer">
+
+            <wsdlsoap:fault name="UnknownCustomer" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCustomerReputation">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCustomerReputationRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCustomerReputationResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ShippingTaskServiceService">
+
+      <wsdl:port binding="impl:ShippingTaskServiceSoapBinding" name="ShippingTaskService">
+
+         <wsdlsoap:address location="http://localhost:8081/ShippingService/services/ShippingTaskService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

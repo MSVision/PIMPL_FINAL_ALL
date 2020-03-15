@@ -1,0 +1,12 @@
+[
+  [
+    "name" : "UpdateCustomer",
+    "parameters" : [
+      "customer" : new ObjectDataType(),
+    ],
+    "results" : [
+      "result" : new ObjectDataType(),
+    ],
+    "displayName" : "UpdateCustomer",
+  ]
+]

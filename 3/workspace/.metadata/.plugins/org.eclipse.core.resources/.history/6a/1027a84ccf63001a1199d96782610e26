@@ -1,0 +1,29 @@
+package de.fhwedel;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+
+@Entity
+@SuppressWarnings("serial")
+public class ContractPosition implements Serializable {
+	
+	
+	
+	@Override
+	public String toString() {
+		return "ContractPosition "
+				+ "["
+				+ "id=" + id + ", "
+				+ "contractNumber=" + contractNumber + ", "
+				+ "deliveryMethod=" + deliveryMethod + ", "
+				+ "customer=" + customer + ", "
+//				+ "contractPositions=" + contractPositions 
+				+ "]";
+	}
+		
+		return "ContractPosition (price=" + price + ", setAmount=" + setAmount + ", actualAmount=" + actualAmount
+				+ ", shippingPositions=" + shippingPositions + ", article=" + article.getCaption() + ")";
+	}
+	
+}

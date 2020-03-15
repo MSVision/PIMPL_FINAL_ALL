@@ -1,0 +1,5 @@
+1578747507291	Rename field 'simpleDateFormat'
+1578765800131	Rename type 'ContractState'
+1578773552742	Rename type 'AccessTechnologies'
+1578855851776	Rename field 'status'
+1578856259887	Rename method 'customerIsPersisted'

@@ -1,0 +1,84 @@
+package de.fhwedel;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@SuppressWarnings("serial")
+public class Item implements Serializable {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+	private Integer id;
+
+	private String productCode;
+	
+	private String caption;
+	
+	private Integer price;
+	
+	private Integer stock;
+
+	public Item() {
+		this("", "", null, null);
+	}
+
+	public Item(String productCode, String caption, Integer price, Integer stock) {
+		this.productCode = productCode;
+		this.caption = caption;
+		this.price = price;
+		this.stock = stock;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public String getProductCode() {
+		return productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
+
+	public String getCaption() {
+		return caption;
+	}
+
+	public void setCaption(String caption) {
+		this.caption = caption;
+	}
+
+	public Integer getPrice() {
+		return price;
+	}
+
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+
+	public Integer getStock() {
+		return stock;
+	}
+
+	public void setStock(Integer stock) {
+		this.stock = stock;
+	}
+	
+	@Override
+	public String toString() {
+		return "Article ["
+				+ "id=" + id + ", "
+				+ "productCode=" + productCode + ", "
+				+ "caption=" + caption + ", "
+				+ "price=" + price + ", "
+				+ "stock=" + stock 
+				+ "]";
+	}
+
+}

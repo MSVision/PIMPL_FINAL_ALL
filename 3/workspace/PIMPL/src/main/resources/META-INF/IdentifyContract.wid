@@ -1,0 +1,10 @@
+[
+  [
+    "name" : "IdentifyContract",
+    "parameters" : [],
+    "results" : [
+    	"contract" : new ObjectDataType()
+    ],
+    "displayName" : "IdentifyContract"
+  ]
+]

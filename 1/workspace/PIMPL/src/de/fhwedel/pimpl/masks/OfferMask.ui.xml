@@ -1,0 +1,155 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:p1="urn:import:de.fhwedel.pimpl.widgets">
+	<ui:style>
+	.header {
+		font-weight: bold;
+	}
+	</ui:style>
+	<g:HTMLPanel>
+		<g:AbsolutePanel height="1000px" width="1000px">
+		
+			<!-- Angebotsliste -->
+			
+			<g:at top="0" height="24px" left="0" width="230px">
+				<g:Label height="24px" styleName="{style.header}" text="Angebote suchen" />
+			</g:at>
+			<g:at top="24" left="0" width="230px">
+				<g:TextBox width="230px" ui:field="offerSearchTextBox"
+					title="Angebote suchen..." />
+			</g:at>
+			<g:at top="64" width="240px" height="486px" left="0">
+				<p1:BOSelectListBox height="486px"
+					ui:field="offersListBox" width="240px" visibleItemCount="20" />
+			</g:at>
+
+			<!-- Angebotsdaten -->
+			
+			<g:at top="0" height="24px" width="177px" left="280">
+				<g:Label height="24px" styleName="{style.header}" text="Angebotsdaten" />
+			</g:at>
+			<g:at top="24" height="24px" width="195px" left="280">
+				<g:Label height="24px" text="Bezeichnung" />
+			</g:at>
+			<g:at top="48" width="195px" left="280">
+				<g:TextBox width="195px" ui:field="offerTitleTextBox"
+					title="Title" />
+			</g:at>
+			<g:at top="24" height="24px" width="195px" left="487">
+				<g:Label height="24px" text="Mindestlaufzeit (Mon.)" />
+			</g:at>
+			<g:at top="48" width="195px" left="487">
+				<g:TextBox width="195px"
+					ui:field="offerMinimumTimeTextBox" title="Mindestlaufzeit" />
+			</g:at>
+			<g:at top="88" height="24px" width="195px" left="280">
+				<g:Label height="24px" text="Zugangstechnologie" />
+			</g:at>
+			<g:at top="112" width="195px" left="280">
+				<g:TextBox width="195px" ui:field="accessTechnologyTextBox"
+					title="Zugangstechnology" />
+			</g:at>
+			<g:at top="88" height="24px" width="195px" left="487">
+				<g:Label height="24px" text="Bandbreite Downlink" />
+			</g:at>
+			<g:at top="112" width="195px" left="487">
+				<g:TextBox width="195px" ui:field="bandwithUplinkTextBox"
+					title="Bandbreite downlink" />
+			</g:at>
+			<g:at top="152" height="24px" width="195px" left="280">
+				<g:Label height="24px" text="Bandbreite Uplink" />
+			</g:at>
+			<g:at top="176" width="195px" left="280">
+				<g:TextBox width="195px" ui:field="bandwithDownTextBox"
+					title="Bandbreite Uplink" />
+			</g:at>
+			<g:at top="152" height="24px" width="195px" left="487">
+				<g:Label height="24px" text="Monatspreis" />
+			</g:at>
+			<g:at top="176" width="195px" left="487">
+				<g:TextBox width="195px" ui:field="monthlyPriceTextBox"
+					title="Ort" />
+			</g:at>
+			<g:at top="216" height="24px" width="195px" left="280">
+				<g:Label height="24px" text="Gültig von" />
+			</g:at>
+			<g:at top="240" width="195px" left="280">
+				<g:TextBox width="195px" ui:field="validFromTextBox"
+					title="Gültig von" />
+			</g:at>
+			<g:at top="216" height="24px" width="195px" left="487">
+				<g:Label height="24px" text="Gültig bis" />
+			</g:at>
+			<g:at top="240" width="195px" left="487">
+				<g:TextBox width="195px" ui:field="validToTextBox"
+					title="Gültig bis" />
+			</g:at>
+			
+			<!-- Vertragsdaten OPTIONAL -->
+			
+			<g:at top="280" height="24px" width="177px" left="280">
+				<g:Label height="24px" ui:field="contractDataLabel" styleName="{style.header}" text="Vertragsdaten" />
+			</g:at>
+			<g:at top="304" height="24px" width="195px" left="280">
+				<g:Label height="24px"  ui:field="contractNumberLabel" text="Vertragsnummer" />
+			</g:at>
+			<g:at top="328" width="195px" left="280">
+				<g:TextBox width="195px" ui:field="contractNumberTextBox"
+					title="Vertragsnummer" />
+			</g:at>
+			<g:at top="304" height="24px" width="195px" left="487">
+				<g:Label height="24px"  ui:field="contractCityLabel" text="Stadt" />
+			</g:at>
+			<g:at top="328" width="195px" left="487">
+				<g:TextBox width="195px" ui:field="contractCityTextBox"
+					title="Stadt" />
+			</g:at>
+			<g:at top="368" height="24px" width="195px" left="280">
+				<g:Label height="24px"  ui:field="contractStreetLabel" text="Straße" />
+			</g:at>
+			<g:at top="392" width="195px" left="280">
+				<g:TextBox width="195px" ui:field="contractStreetTextBox"
+					title="Straße" />
+			</g:at>
+			<g:at top="368" height="24px" width="195px" left="487">
+				<g:Label height="24px"  ui:field="contractZipLabel" text="Plz" />
+			</g:at>
+			<g:at top="392" width="195px" left="487">
+				<g:TextBox width="195px" ui:field="contractZipTextBox"
+					title="Plz" />
+			</g:at>
+			<g:at top="432" height="24px" width="195px" left="280">
+				<g:Label height="24px"  ui:field="contractStartLabel" text="Vertragsbeginn" />
+			</g:at>
+			<g:at top="456" width="195px" left="280">
+				<g:TextBox width="195px" ui:field="contractStartTextBox"
+					title="Vertragsbeginn" />
+			</g:at>
+ 			
+			<!-- Kundenactionsbuttons -->
+			
+			<g:at top="456" left="487">
+				<g:Button text="Vertragsbeginn speichern" ui:field="editContractStartDateBtn" />
+			</g:at>
+			
+			<g:at top="522" left="280">
+				<g:Button text="Kein passendes Angebot" ui:field="cancelAddOfferToContractBtn" />
+			</g:at>
+			
+			<g:at top="522" left="453">
+				<g:Button text="Angebot zum Vertrag hinzufügen" ui:field="addOfferToContractBtn" />
+			</g:at>
+			
+			<!-- Verfügbarkeiten zum Angebot -->
+
+			<g:at top="0" height="24px" left="723" width="277px">
+				<g:Label height="24px" styleName="{style.header}" text="Verfügbarkeiten" />
+			</g:at>
+			<g:at top="24" width="277px" height="526px" left="723">
+				<g:ListBox height="526px"
+					ui:field="availabilitiesDataListBox" width="277px" visibleItemCount="24" />
+			</g:at>
+		</g:AbsolutePanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

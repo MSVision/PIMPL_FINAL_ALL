@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+D:\PIMP_BPEL\PDK_BPEL_SS19\workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+501223538.index
+3958207601.index
+3120624924.index
+1357318616.index
+547351554.index
+3902938901.index
+145226014.index

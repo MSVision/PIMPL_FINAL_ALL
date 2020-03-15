@@ -1,0 +1,2 @@
+serviceClass: de.fhwedel.pmod.services.PModService
+path: F7826E7DE50642C9346A25FADC6970A4.gwt.rpc

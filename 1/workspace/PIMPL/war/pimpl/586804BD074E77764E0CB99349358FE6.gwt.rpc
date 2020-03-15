@@ -1,0 +1,44 @@
+@FinalFields, false
+com.google.gwt.i18n.shared.impl.DateRecord, true, true, true, true, com.google.gwt.i18n.shared.impl.DateRecord/3173882066, 3173882066
+com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException, true, true, true, true, com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException/3936916533, 3936916533
+com.google.gwt.user.client.rpc.RpcTokenException, true, true, false, false, com.google.gwt.user.client.rpc.RpcTokenException/2345075298, 2345075298
+com.google.gwt.user.client.rpc.XsrfToken, false, false, true, true, com.google.gwt.user.client.rpc.XsrfToken/4254043109, 4254043109
+de.fhwedel.pimpl.model.Angebot, true, true, true, true, de.fhwedel.pimpl.model.Angebot/996866776, 996866776
+@ClientFields,de.fhwedel.pimpl.model.Angebot,bezeichnung,mindestlaufzeitMonate,technologie,bandbreiteDownlink,bandbreiteUplink,monatspreis,gueltigVon,gueltigBis
+de.fhwedel.pimpl.model.Angebot$Technologie, true, true, true, true, de.fhwedel.pimpl.model.Angebot$Technologie/3940395511, 3940395511
+[Lde.fhwedel.pimpl.model.Angebot;, true, true, false, false, [Lde.fhwedel.pimpl.model.Angebot;/3179064035, 3179064035
+de.fhwedel.pimpl.model.BaseBusinessObject, true, false, true, false, de.fhwedel.pimpl.model.BaseBusinessObject/4188730200, 4188730200
+de.fhwedel.pimpl.model.IllegalValueException, true, true, false, false, de.fhwedel.pimpl.model.IllegalValueException/1853791692, 1853791692
+de.fhwedel.pimpl.model.Kunde, true, true, true, true, de.fhwedel.pimpl.model.Kunde/3494396670, 3494396670
+@ClientFields,de.fhwedel.pimpl.model.Kunde,kundenNr,name,vorname,strasse,plz,ort
+[Lde.fhwedel.pimpl.model.Kunde;, true, true, false, false, [Lde.fhwedel.pimpl.model.Kunde;/855423748, 855423748
+de.fhwedel.pimpl.model.Verfuegbarkeit, true, true, false, false, de.fhwedel.pimpl.model.Verfuegbarkeit/273165715, 273165715
+@ClientFields,de.fhwedel.pimpl.model.Verfuegbarkeit,plzAnfang,plzEnde,gueltigVon,gueltigBis,angebot
+[Lde.fhwedel.pimpl.model.Verfuegbarkeit;, true, true, false, false, [Lde.fhwedel.pimpl.model.Verfuegbarkeit;/1916483826, 1916483826
+de.fhwedel.pimpl.model.Vertrag, true, true, true, true, de.fhwedel.pimpl.model.Vertrag/573190099, 573190099
+@ClientFields,de.fhwedel.pimpl.model.Vertrag,erfassungsdatum,vertragsnummer,vertragsstatus,vertragsbeginn,iban,bic,einrichtungAnschlussSoll,einrichtungAnschlussIst,versandEndgeraete,endgeraeteZurueckErhalten,eingangWiderruf,vertragsende,kunde,angebot
+de.fhwedel.pimpl.model.Vertrag$Vertragsstatus, true, true, true, true, de.fhwedel.pimpl.model.Vertrag$Vertragsstatus/1288010052, 1288010052
+[Lde.fhwedel.pimpl.model.Vertrag;, true, true, false, false, [Lde.fhwedel.pimpl.model.Vertrag;/778464476, 778464476
+de.fhwedel.pimpl.services.PIMPLService, false, false, false, false, _, 2647270219
+java.lang.Exception, true, false, true, false, java.lang.Exception/1920171873, 1920171873
+java.lang.Integer, true, true, true, true, java.lang.Integer/3438268394, 3438268394
+java.lang.Number, true, false, true, false, java.lang.Number/300033342, 300033342
+java.lang.RuntimeException, true, false, true, false, java.lang.RuntimeException/515124647, 515124647
+java.lang.String, true, true, true, true, java.lang.String/2004016611, 2004016611
+java.lang.Throwable, true, false, true, false, java.lang.Throwable/2953622131, 2953622131
+java.sql.Date, true, true, true, true, java.sql.Date/730999118, 730999118
+java.sql.Time, true, true, true, true, java.sql.Time/1816797103, 1816797103
+java.sql.Timestamp, true, true, true, true, java.sql.Timestamp/3040052672, 3040052672
+java.util.ArrayList, true, true, false, false, java.util.ArrayList/4159755760, 4159755760
+java.util.Arrays$ArrayList, true, true, false, false, java.util.Arrays$ArrayList/2507071751, 2507071751
+java.util.Collections$EmptyList, true, true, false, false, java.util.Collections$EmptyList/4157118744, 4157118744
+java.util.Collections$EmptyMap, true, true, false, false, java.util.Collections$EmptyMap/4174664486, 4174664486
+java.util.Collections$SingletonList, true, true, false, false, java.util.Collections$SingletonList/1586180994, 1586180994
+java.util.Date, true, true, true, true, java.util.Date/3385151746, 3385151746
+java.util.HashMap, true, true, false, false, java.util.HashMap/1797211028, 1797211028
+java.util.IdentityHashMap, true, true, false, false, java.util.IdentityHashMap/1839153020, 1839153020
+java.util.LinkedHashMap, true, true, false, false, java.util.LinkedHashMap/3008245022, 3008245022
+java.util.LinkedList, true, true, false, false, java.util.LinkedList/3953877921, 3953877921
+java.util.Stack, true, true, false, false, java.util.Stack/1346942793, 1346942793
+java.util.TreeMap, true, true, false, false, java.util.TreeMap/1493889780, 1493889780
+java.util.Vector, true, true, false, false, java.util.Vector/3057315478, 3057315478

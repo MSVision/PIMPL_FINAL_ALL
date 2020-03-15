@@ -1,0 +1,10 @@
+[
+  [
+    "name" : "IncreaseStock",
+    "parameters" : [],
+    "results" : [
+      	"result" : new ObjectDataType()
+    ],
+    "displayName" : "IncreaseStock"
+  ]
+]

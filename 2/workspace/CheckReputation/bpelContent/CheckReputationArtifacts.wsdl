@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://fh-wedel.de/pimpl" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://fhwedel.de" name="CheckReputation" targetNamespace="http://fh-wedel.de/pimpl">
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     TYPE DEFINITION - List of types participating in this BPEL process 
+     The BPEL Designer will generate default request and response types
+     but you can define or import any XML Schema type and use them as part 
+     of the message types.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <plnk:partnerLinkType name="CustomerServiceType">
+    <plnk:role name="CustomerServiceProvider" portType="wsdl:CustomerService"/>
+  </plnk:partnerLinkType>
+    <import location="CustomerService.wsdl" namespace="http://fhwedel.de"/>
+    <!-- 
+    <types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fh-wedel.de/pimpl">
+
+            <element name="CheckReputationRequest">
+                <complexType>
+                    <sequence>
+                        <element name="input" type="string"/>
+                    </sequence>
+                </complexType>
+            </element>
+
+            <element name="CheckReputationResponse">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="string"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+    </types>
+     -->
+    <types>
+		<schema 
+			xmlns="http://www.w3.org/2001/XMLSchema" 
+			attributeFormDefault="unqualified" 
+			elementFormDefault="qualified" 
+			targetNamespace="http://fh-wedel.de/pimpl">
+
+			<complexType name="Adress">
+				<sequence>
+					<element name="name" type="string"/>
+					<element name="street" type="string"/>
+					<element name="zip" type="string"/>
+					<element name="place" type="string"/>
+				</sequence>
+			</complexType>
+			
+			<element name="CheckReputationRequest">
+				<complexType>
+					<sequence>
+						<element name="customerNumber" type="integer"/>
+						<element name="identifier" type="string"/>
+						<element name="weight" type="integer"/>
+						<element name="productCode" type="string"/>
+						<element name="fromAdress" type="tns:Adress"/>
+						<element name="toAdress" type="tns:Adress"/>
+					</sequence>
+				</complexType>
+			</element>
+
+			<element name="CheckReputationResponse">
+				<complexType>
+					<sequence>
+						<element name="contractNumber" type="integer"/>
+					</sequence>
+				</complexType>
+			</element>
+			
+		</schema>
+	</types>
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     MESSAGE TYPE DEFINITION - Definition of the message types used as 
+     part of the port type defintions
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <message name="CheckReputationRequestMessage">
+        <part element="tns:CheckReputationRequest" name="payload"/>
+    </message>
+    <message name="CheckReputationResponseMessage">
+        <part element="tns:CheckReputationResponse" name="payload"/>
+    </message>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     PORT TYPE DEFINITION - A port type groups a set of operations into
+     a logical service unit.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+
+    <!-- portType implemented by the CheckReputation BPEL process -->
+    <portType name="CheckReputation">
+        <operation name="process">
+            <input message="tns:CheckReputationRequestMessage"/>
+            <output message="tns:CheckReputationResponseMessage"/>
+        </operation>
+    </portType>   
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     PARTNER LINK TYPE DEFINITION
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <plnk:partnerLinkType name="CheckReputation">
+        <plnk:role name="CheckReputationProvider" portType="tns:CheckReputation"/>
+    </plnk:partnerLinkType>
+    
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     BINDING DEFINITION - Defines the message format and protocol details
+     for a web service.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <binding name="CheckReputationBinding" type="tns:CheckReputation">
+    	<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    	<operation name="process">
+    		<soap:operation soapAction="http://fh-wedel.de/pimpl/process"/>
+    		<input>
+    			<soap:body use="literal"/>
+    		</input>
+    		<output>
+    			<soap:body use="literal"/>
+    		</output>
+    	</operation>
+    </binding>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     SERVICE DEFINITION - A service groups a set of ports into
+     a service unit.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <service name="CheckReputationService">
+    	<port binding="tns:CheckReputationBinding" name="CheckReputationPort">
+    		<soap:address location="http://localhost:8080/ode/processes/CheckReputation"/>
+    	</port>
+    </service>
+</definitions>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     Custom - Starts here
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+     
+     
+     

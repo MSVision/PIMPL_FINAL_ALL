@@ -1,0 +1,120 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:p1="urn:import:de.fhwedel.pimpl.widgets">
+	<ui:style>
+	.header {
+		font-weight: bold;
+	}
+	</ui:style>
+	<g:HTMLPanel>
+		<g:AbsolutePanel height="1000px" width="1000px">
+
+			<!-- Kundenliste -->
+
+			<g:at top="0" height="24px" left="0" width="230px">
+				<g:Label height="24px" styleName="{style.header}" text="Kunden suchen" />
+			</g:at>
+			<g:at top="24" left="0" width="230px">
+				<g:TextBox width="230px" ui:field="customerSearchTextBox"
+					title="Kunde suchen..." />
+			</g:at>
+			<g:at top="64" width="240px" height="916px" left="0">
+				<p1:BOSelectListBox height="486px"
+					ui:field="customersListBox" width="240px" visibleItemCount="20" />
+			</g:at>
+
+			<!-- Kundendaten -->
+			<!-- 
+			<g:at top="0" height="24px" width="177px" left="280">
+				<g:Label height="24px" styleName="{style.header}" text="Kundendaten" />
+			</g:at>
+			-->
+			<g:at top="0" height="24px" width="2550" left="280">
+				<g:Label height="24px" text="Kundennummer" />
+			</g:at>
+			<g:at top="24" width="255px" left="280">
+				<g:TextBox width="255px" ui:field="customerNumberTextBox"
+					title="Kundennummer" />
+			</g:at>
+			<g:at top="64" height="24px" width="2550" left="280">
+				<g:Label height="24px" text="Vorname" />
+			</g:at>
+			<g:at top="88" width="255px" left="280">
+				<g:TextBox width="255px"
+					ui:field="customerForenameTextBox" title="Vorname" />
+			</g:at>
+			<g:at top="128" height="24px" width="2550" left="280">
+				<g:Label height="24px" text="Nachname" />
+			</g:at>
+			<g:at top="152" width="255px" left="280">
+				<g:TextBox width="255px" ui:field="customerNameTextBox"
+					title="Nachname" />
+			</g:at>
+			<g:at top="192" height="24px" width="2550" left="280">
+				<g:Label height="24px" text="Straße" />
+			</g:at>
+			<g:at top="216" width="255px" left="280">
+				<g:TextBox width="255px" ui:field="customerStreetTextBox"
+					title="Straße" />
+			</g:at>
+			<g:at top="256" height="24px" width="2550" left="280">
+				<g:Label height="24px" text="Postleitzahl" />
+			</g:at>
+			<g:at top="280" width="255px" left="280">
+				<g:TextBox width="255px" ui:field="customerZipTextBox"
+					title="Postleitzahl" />
+			</g:at>
+			<g:at top="320" height="24px" width="2550" left="280">
+				<g:Label height="24px" text="Ort" />
+			</g:at>
+			<g:at top="344" width="255px" left="280">
+				<g:TextBox width="255px" ui:field="customerCityTextBox"
+					title="Ort" />
+			</g:at>
+			<!-- Kundenactionsbuttons -->
+
+			<g:at top="522" left="280">
+				<g:Button text="Neuen Kunde anlegen"
+					ui:field="initNewCustomerBtn" />
+			</g:at>
+			<g:at top="522" left="370">
+				<g:Button text="Hinzufügen" ui:field="addCustomerBtn" />
+			</g:at>
+			<g:at top="522" left="280">
+				<g:Button text="Abbrechen" ui:field="cancelAddCustomerBtn" />
+			</g:at>
+			<g:at top="522" left="435">
+				<g:Button text="Kunde bearbeiten"
+					ui:field="editCustomerBtn" />
+			</g:at>
+			<g:at top="522" left="435">
+				<g:Button text="Kunde speichern" ui:field="saveCustomerBtn" />
+			</g:at>
+			<g:at top="522" left="564">
+				<g:Button text="Neuen Vertrag erstellen"
+					ui:field="initNewContractBtn" />
+			</g:at>
+
+			<!-- Vertragsliste zum Kunden -->
+
+			<g:at top="0" height="24px" left="741" width="259px">
+				<g:Label height="24px" styleName="{style.header}" text="Verträge" />
+			</g:at>
+			<g:at top="24" width="259px" height="245px" left="741">
+				<p1:BOSelectListBox height="245px"
+					ui:field="contractsListBox" width="259px" visibleItemCount="10" />
+			</g:at>
+
+			<!-- Angebote beim Kunden -->
+
+			<g:at top="281" height="24px" left="741" width="259px">
+				<g:Label height="24px" styleName="{style.header}" text="Mögliche Angebote" />
+			</g:at>
+			<g:at top="305" width="259px" height="245px" left="741">
+				<p1:BOSelectListBox height="245px"
+					ui:field="offersListBox" width="259px" visibleItemCount="10" />
+			</g:at>
+		</g:AbsolutePanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

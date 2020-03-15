@@ -1,0 +1,3 @@
+# Module pimpl
+# RPC service class, partial path of RPC policy file
+de.fhwedel.pimpl.services.PIMPLService, 790F456ED32E1FC33D9FEEFEEB7B60FE.gwt.rpc

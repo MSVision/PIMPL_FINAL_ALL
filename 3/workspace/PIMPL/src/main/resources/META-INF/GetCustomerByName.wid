@@ -1,0 +1,12 @@
+[
+  [
+    "name" : "GetCustomerByName",
+    "parameters" : [
+      "name" : new StringDataType(),
+    ],
+    "results" : [
+      "customer" : new ObjectDataType(),
+    ],
+    "displayName" : "GetCustomerByName",
+  ]
+]

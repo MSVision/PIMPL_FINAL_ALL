@@ -1,0 +1,12 @@
+[
+  [
+    "name" : "StringToLength",
+    "parameters" : [
+      "instr" : new StringDataType(),
+    ],
+    "results" : [
+      "length" : new IntegerDataType(),
+    ],
+    "displayName" : "StringToLength",
+  ]
+]

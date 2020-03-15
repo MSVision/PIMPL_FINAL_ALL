@@ -1,0 +1,71 @@
+package de.fhwedel;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+
+@Entity
+@SuppressWarnings("serial")
+public class ShippingOrder implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+	private Integer id;
+	private Integer shippingConNum;
+	private String shippingNum;
+	private String shippingService;
+
+	private List<ShippingPosition> shippingPositions = new ArrayList<>();
+
+	public ShippingContract() {
+	}
+
+	public ShippingContract(Integer shippingConNum, String shippingNum, String shippingService) {
+		this.shippingConNum = shippingConNum;
+		this.shippingNum = shippingNum;
+		this.shippingService = shippingService;
+	}
+
+	public Integer getId() {
+		return this.id;
+	}
+
+	public Integer getShippingConNum() {
+		return shippingConNum;
+	}
+
+	public void setShippingConNum(Integer shippingConNum) {
+		this.shippingConNum = shippingConNum;
+	}
+
+	public String getShippingNum() {
+		return shippingNum;
+	}
+
+	public void setShippingNum(String shippingNum) {
+		this.shippingNum = shippingNum;
+	}
+
+	public String getShippingService() {
+		return shippingService;
+	}
+
+	public void setShippingService(String shippingService) {
+		this.shippingService = shippingService;
+	}
+
+	public List<ShippingPosition> getShippingPositions() {
+		return shippingPositions;
+	}
+
+	public void setShippingPositions(List<ShippingPosition> shippingPositions) {
+		this.shippingPositions = shippingPositions;
+	}
+
+	@Override
+	public String toString() {
+		return "ShippingContract (shippingConNum=" + shippingConNum + ", shippingNum=" + shippingNum
+				+ ", shippingService=" + shippingService + ", shippingPositions=" + shippingPositions + ")";
+	}
+	
+}

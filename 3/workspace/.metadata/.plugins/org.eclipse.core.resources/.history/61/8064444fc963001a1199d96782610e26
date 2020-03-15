@@ -1,0 +1,29 @@
+package de.fhwedel;
+
+@Entity
+@SuppressWarnings("serial")
+public class Item implements Serializable {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+	private Integer id;
+
+	private String productCode;
+	
+	private String caption;
+	
+	private Integer price;
+	
+	private Integer stock;
+
+	public Item() {
+	}
+
+	public Item(String productCode, String caption, Integer price, Integer stock) {
+		this.productCode = productCode;
+		this.caption = caption;
+		this.price = price;
+		this.stock = stock;
+	}
+
+}

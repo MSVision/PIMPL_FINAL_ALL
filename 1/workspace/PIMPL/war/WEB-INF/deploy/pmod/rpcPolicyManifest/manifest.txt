@@ -1,0 +1,3 @@
+# Module pmod
+# RPC service class, partial path of RPC policy file
+de.fhwedel.pmod.services.PModService, F7826E7DE50642C9346A25FADC6970A4.gwt.rpc

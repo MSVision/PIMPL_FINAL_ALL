@@ -1,0 +1,13 @@
+[
+  [
+    "name" : "CreateShippingOrder",
+    "parameters" : [
+    	"contractPosition" : new ObjectDataType(),
+    	"shippingOrder" : new ObjectDataType()
+    ],
+    "results" : [
+    	"result" : new ObjectDataType()
+    ],
+    "displayName" : "CreateShippingOrder"
+  ]
+]

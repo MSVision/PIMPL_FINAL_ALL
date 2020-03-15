@@ -1,0 +1,5 @@
+check.project.nature=true
+do.core.validation=true
+eclipse.preferences.version=1
+shape.style/=D4E7F8;F4FFFF;B4C7D8;546778;arial,9,-,-;546778;0;2;0;110;50;0
+target.runtime=org.jboss.runtime.jbpm5

@@ -1,0 +1,202 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:p1="urn:import:de.fhwedel.pimpl.widgets">
+	<ui:style>
+	.header {
+		font-weight: bold;
+	}
+	</ui:style>
+	<g:HTMLPanel>
+		<g:AbsolutePanel height="1000px" width="1000px">
+
+			<!-- Vertragsliste -->
+
+			<g:at top="0" height="24px" left="0" width="230px">
+				<g:Label height="24px" styleName="{style.header}"
+					text="Verträge suchen" />
+			</g:at>
+			<g:at top="24" left="0" width="230px">
+				<g:TextBox width="230px" ui:field="contractsSearchTextBox"
+					title="Verträge suchen..." />
+			</g:at>
+			<g:at top="64" width="240px" height="486px" left="0">
+				<p1:BOSelectListBox height="486px"
+					ui:field="contractsListBox" width="240px" visibleItemCount="20" />
+			</g:at>
+
+			<!-- Vertragsdaten -->
+
+			<g:at top="0" height="24px" width="177px" left="280">
+				<g:Label height="24px" styleName="{style.header}"
+					text="Vertragsdaten" />
+			</g:at>
+			
+			<g:at top="24" height="24px" width="195px" left="280">
+				<g:Label height="24px" text="Vertragsnummer" />
+			</g:at>
+			<g:at top="48" width="195px" left="280">
+				<g:TextBox width="195px" ui:field="contractNumberTextBox"
+					title="Vertragsnummer" />
+			</g:at>
+			<g:at top="24" height="24px" width="195px" left="487">
+				<g:Label height="24px" text="Vertragsstatus" />
+			</g:at>
+			<g:at top="48" width="195px" left="487">
+				<g:TextBox width="195px" ui:field="contractStateTextBox"
+					title="Vertragsstatus" />
+			</g:at>
+			<g:at top="88" height="24px" width="195px" left="280">
+				<g:Label height="24px" text="Erfassungsdatum" />
+			</g:at>
+			<g:at top="112" width="195px" left="280">
+				<g:TextBox width="195px" ui:field="dateOfEntryTextBox"
+					title="Erfassungsdatum" />
+			</g:at>
+			<g:at top="88" height="24px" width="195px" left="487">
+				<g:Label height="24px" text="Vertragsbeginn" />
+			</g:at>
+			<g:at top="112" width="195px" left="487">
+				<g:TextBox width="195px" ui:field="contractStartTextBox"
+					title="Vertragsbeginn" />
+			</g:at>
+			<g:at top="152" height="24px" width="195px" left="280">
+				<g:Label height="24px" text="IBAN" />
+			</g:at>
+			<g:at top="176" width="195px" left="280">
+				<g:TextBox width="195px" ui:field="ibanTextBox"
+					title="IBAN" />
+			</g:at>
+			<g:at top="152" height="24px" width="195px" left="487">
+				<g:Label height="24px" text="BIC" />
+			</g:at>
+			<g:at top="176" width="195px" left="487">
+				<g:TextBox width="195px" ui:field="bicTextBox" title="BIC" />
+			</g:at>
+			<g:at top="216" height="24px" width="195px" left="280">
+				<g:Label height="24px" text="Einrichtung Anschluss (Soll)" />
+			</g:at>
+			<g:at top="240" width="195px" left="280">
+				<g:TextBox width="195px" ui:field="setUpShouldTextBox"
+					title="Einrichtung Anschluss (Soll)" />
+			</g:at>
+			<g:at top="216" height="24px" width="195px" left="487">
+				<g:Label height="24px" text="Einrichtung Anschluss (Ist)" />
+			</g:at>
+			<g:at top="240" width="195px" left="487">
+				<g:TextBox width="195px" ui:field="setUpIsTextBox"
+					title="Einrichtung Anschluss (Ist)" />
+			</g:at>
+			<g:at top="280" height="24px" width="195px" left="280">
+				<g:Label height="24px" text="Endgeräte versendet" />
+			</g:at>
+			<g:at top="304" width="195px" left="280">
+				<g:TextBox width="195px" ui:field="enddevicesSendTextBox"
+					title="Endgeräte versendet" />
+			</g:at>
+			<g:at top="280" height="24px" width="195px" left="487">
+				<g:Label height="24px" text="Endgeräte zurückerhalten" />
+			</g:at>
+			<g:at top="304" width="195px" left="487">
+				<g:TextBox width="195px"
+					ui:field="enddevicesRecivedTextBox"
+					title="Endgeräte zurückerhalten" />
+			</g:at>
+			<g:at top="344" height="24px" width="195px" left="280">
+				<g:Label height="24px" text="Wiederruf eingegangen" />
+			</g:at>
+			<g:at top="368" width="195px" left="280">
+				<g:TextBox width="195px" ui:field="recallRecivedTextBox"
+					title="Wiederruf eingegangen" />
+			</g:at>
+			<g:at top="344" height="24px" width="195px" left="487">
+				<g:Label height="24px" text="Vertragsende" />
+			</g:at>
+			<g:at top="368" width="195px" left="487">
+				<g:TextBox width="195px" ui:field="contractEndTextBox"
+					title="Vertragsende" />
+			</g:at>
+			
+			<!-- Vertragsfunktionen -->
+			
+			<g:at top="522" left="280">
+				<g:Button text="Vertrag anlegen"
+					ui:field="initContractBtn" />
+			</g:at>
+			
+			<g:at top="522" left="280">
+				<g:Button text="Angebot hinzufügen"
+					ui:field="addOfferBtn" />
+			</g:at>
+			
+			<g:at top="522" left="280">
+				<g:Button text="Bonität überprüfen"
+					ui:field="checkCustomerCreditRatingBtn" />
+			</g:at>
+			
+			<g:at top="522" left="280">
+				<g:Button text="Bankverbindung speichern"
+					ui:field="saveCreditDataBtn" />
+			</g:at>
+			
+			<g:at top="522" left="280">
+				<g:Button text="Vertragserklärung eingeholt"
+					ui:field="contractDeclarationObtainedBtn" />
+			</g:at>
+			
+			<g:at top="522" left="280">
+				<g:Button text="Einrichtungsdatum speichern"
+					ui:field="setUpShouldBtn" />
+			</g:at>
+		
+		
+		
+			<g:at top="522" left="280">
+				<g:Button text="Endgeräte benötigt"
+					ui:field="enddevicesNeededBtn" />
+			</g:at>
+			
+			<g:at top="522" left="460">
+				<g:Button text="Endgeräte nicht benötigt"
+					ui:field="enddevicesNotNeededBtn" />
+			</g:at>
+			
+		
+			<g:at top="522" left="280">
+				<g:Button text="Prüfe ob endgeräte versendet werden müssen."
+					ui:field="devicesSendCheckerBtn" />
+			</g:at>
+			
+			
+			
+			
+			
+			<g:at top="522" left="280">
+				<g:Button text="Kündigungsdatum speichern"
+					ui:field="saveTerminationDateBtn" />
+			</g:at>
+			
+			<!-- Vertragsliste zum Kunden -->
+
+			<g:at top="0" height="24px" left="723" width="277px">
+				<g:Label height="24px" styleName="{style.header}"
+					text="Kundendaten" />
+			</g:at>
+			<g:at top="24" width="277px" height="245px" left="723">
+				<g:ListBox height="245px" ui:field="customerDataListBox"
+					width="277px" visibleItemCount="10" />
+			</g:at>
+
+			<!-- Angebote vom Vertrag -->
+
+			<g:at top="281" height="24px" left="723" width="277px">
+				<g:Label height="24px" styleName="{style.header}"
+					text="Angebotsdaten" />
+			</g:at>
+			<g:at top="305" width="277px" height="245px" left="723">
+				<g:ListBox height="245px" ui:field="offerDataListBox"
+					width="277px" visibleItemCount="10" />
+			</g:at>
+		</g:AbsolutePanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

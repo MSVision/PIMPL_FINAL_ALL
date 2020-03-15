@@ -1,0 +1,11 @@
+package de.fhwedel;
+
+import javax.persistence.Entity;
+
+@Entity
+@SuppressWarnings("serial")
+public class ShippingOrder {
+
+	
+	
+}

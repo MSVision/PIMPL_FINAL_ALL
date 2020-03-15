@@ -1,0 +1,3 @@
+# Module taschenrechner
+# RPC service class, partial path of RPC policy file
+de.fhwedel.taschenrechner.client.RechnerService, 6C024E5E425784602722A2F9B4F7B142.gwt.rpc

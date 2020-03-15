@@ -1,0 +1,12 @@
+[
+  [
+    "name" : "DetermineDeliverableIrderItems",
+    "parameters" : [
+    	"contractPosition" : new ObjectDataType()
+    ],
+    "results" : [
+    	"result" : new ObjectDataType()
+    ],
+    "displayName" : "DetermineDeliverableIrderItems"
+  ]
+]

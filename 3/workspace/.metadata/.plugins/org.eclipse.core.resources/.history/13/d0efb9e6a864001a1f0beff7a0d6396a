@@ -1,0 +1,13 @@
+[
+  [
+    "name" : "AssignOpenShippingItemsToShippingOrder",
+    "parameters" : [
+    	"contractPosition" : new ObjectDataType(),
+    	"shippingContract" : new ObjectDataType()
+    ],
+    "results" : [
+    	"result" : new ObjectDataType()
+    ],
+    "displayName" : "Assign open shipping items to the shipping order"
+  ]
+]

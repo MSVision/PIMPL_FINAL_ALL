@@ -1,0 +1,62 @@
+package de.fhwedel;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
+@SuppressWarnings("serial")
+public class ContractPosition implements Serializable {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+	private Integer id;
+	
+	private Integer price;
+	
+	private Integer setAmount;
+	
+	private Integer actualAmount;
+
+	@OneToMany(cascade = CascadeType.PERSIST)
+	private List<ShippingPosition> shippingPositions = new ArrayList<>();
+	
+	@ManyToOne(fetch=FetchType.EAGER)
+	private Article article;
+
+	public ContractPosition() {
+		this(null, null);
+	}
+
+	public ContractPosition(Integer price, Integer setAmount, Integer actualAmount) {
+		super();
+		this.price = price;
+		this.setAmount = setAmount;
+		this.actualAmount = actualAmount;
+	}
+	
+	@Override
+	public String toString() {
+		return "ContractPosition "
+				+ "["
+				+ "id=" + id + ", "
+				+ "contractNumber=" + contractNumber + ", "
+				+ "deliveryMethod=" + deliveryMethod + ", "
+				+ "customer=" + customer + ", "
+//				+ "contractPositions=" + contractPositions 
+				+ "]";
+	}
+		
+		return "ContractPosition (price=" + price + ", setAmount=" + setAmount + ", actualAmount=" + actualAmount
+				+ ", shippingPositions=" + shippingPositions + ", article=" + article.getCaption() + ")";
+	}
+	
+}

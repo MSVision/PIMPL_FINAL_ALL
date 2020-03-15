@@ -1,0 +1,45 @@
+package de.fhwedel;
+
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
+@SuppressWarnings("serial")
+public class DispositionCustomer implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+	private Integer id;
+	
+	private String name;
+	
+	private Integer customerNumber;
+	
+	private String street;
+	
+	private String zip;
+	
+	private String city;
+
+//	@OneToMany(cascade = CascadeType.PERSIST)
+//	private List<ShippingContract> shippingContracts = new ArrayList<>();
+
+	public DispositionCustomer() {
+		this("", null, "", "", "");
+	}
+
+	public DispositionCustomer(String name, Integer customerNumber, String street, String zip, String city) {
+		this.name = name;
+		this.customerNumber = customerNumber;
+		this.street = street;
+		this.zip = zip;
+		this.city = city;
+	}
+	
+}

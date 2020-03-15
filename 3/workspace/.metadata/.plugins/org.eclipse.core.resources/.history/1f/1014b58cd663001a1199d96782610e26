@@ -1,0 +1,13 @@
+package de.fhwedel;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+
+@Entity
+@SuppressWarnings("serial")
+public class ShippingPosition implements Serializable {
+	
+	
+
+}

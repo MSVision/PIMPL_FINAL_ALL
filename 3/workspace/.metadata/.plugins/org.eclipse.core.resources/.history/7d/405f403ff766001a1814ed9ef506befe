@@ -1,0 +1,12 @@
+[
+  [
+    "name" : "DetermineOpenContractPositions",
+    "parameters" : [
+    	"contractPosition" : new ObjectDataType()
+    ],
+    "results" : [
+    	"result" : new ObjectDataType()
+    ],
+    "displayName" : "DetermineOpenContractPositions"
+  ]
+]

@@ -1,0 +1,51 @@
+package de.fhwedel;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@SuppressWarnings("serial")
+public class ShippingPosition implements Serializable {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+	private Integer id;
+	
+	private Integer amount;
+
+	public ShippingPosition() {
+		this(null);
+	}
+
+	public ShippingPosition(Integer amount) {
+		this.amount = amount;
+	}
+
+	public Integer getId() {
+		return this.id;
+	}
+
+	public Integer getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Integer amount) {
+		this.amount = amount;
+	}
+
+	@Override
+	public String toString() {
+		return "ShippingPosition (amount=" + amount + ")";
+		
+		return "Item "
+				+ "["
+				+ "id=" + id + ", "
+				+ "amount=" + amount
+				+ "]";
+	}
+
+}

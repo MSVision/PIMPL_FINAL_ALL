@@ -1,0 +1,13 @@
+[
+  [
+    "name" : "ShippingPositionToContract",
+    "parameters" : [
+    	"contractPosition" : new ObjectDataType(),
+    	"shippingContract" : new ObjectDataType()
+    ],
+    "results" : [
+    	"result" : new ObjectDataType()
+    ],
+    "displayName" : "ShippingPositionToContract"
+  ]
+]

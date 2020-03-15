@@ -1,0 +1,2 @@
+serviceClass: de.fhwedel.taschenrechner.client.RechnerService
+path: 6C024E5E425784602722A2F9B4F7B142.gwt.rpc

@@ -1,0 +1,4 @@
+axis2RuntimeLocation=..\\axis2
+cleintDatabinding=ADB
+eclipse.preferences.version=1
+serviceDatabinding=ADB

@@ -1,0 +1,64 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ShippingTaskServiceService WSDL service -->
+
+  <service name="ShippingTaskService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://fhwedel.de"/>
+      <parameter name="wsdlServiceElement" value="ShippingTaskServiceService"/>
+      <parameter name="schemaQualified" value="http://fhwedel.de"/>
+      <parameter name="wsdlServicePort" value="ShippingTaskService"/>
+      <parameter name="className" value="de.fhwedel.ShippingTaskServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="ShippingTaskService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="log" qname="operNS:log" xmlns:operNS="http://fhwedel.de" soapAction="" >
+        <parameter qname="pns:s" xmlns:pns="http://fhwedel.de" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="updateCustomer" qname="operNS:updateCustomer" xmlns:operNS="http://fhwedel.de" soapAction="" >
+        <parameter qname="pns:c" xmlns:pns="http://fhwedel.de" type="tns:Customer" xmlns:tns="http://fhwedel.de"/>
+        <fault name="UpdateFailed" qname="fns:fault" xmlns:fns="http://fhwedel.de" class="de.fhwedel.UpdateFailed" type="tns:UpdateFailed" xmlns:tns="http://fhwedel.de"/>
+      </operation>
+      <operation name="getCustomerByName" qname="operNS:getCustomerByName" xmlns:operNS="http://fhwedel.de" returnQName="retNS:getCustomerByNameReturn" xmlns:retNS="http://fhwedel.de" returnType="rtns:Customer" xmlns:rtns="http://fhwedel.de" soapAction="" >
+        <parameter qname="pns:name" xmlns:pns="http://fhwedel.de" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <fault name="UnknownCustomer" qname="fns:fault1" xmlns:fns="http://fhwedel.de" class="de.fhwedel.UnknownCustomer" type="tns:UnknownCustomer" xmlns:tns="http://fhwedel.de"/>
+      </operation>
+      <operation name="getCustomerReputation" qname="operNS:getCustomerReputation" xmlns:operNS="http://fhwedel.de" returnQName="retNS:getCustomerReputationReturn" xmlns:retNS="http://fhwedel.de" returnType="rtns:Customer" xmlns:rtns="http://fhwedel.de" soapAction="" >
+        <parameter qname="pns:c" xmlns:pns="http://fhwedel.de" type="tns:Customer" xmlns:tns="http://fhwedel.de"/>
+      </operation>
+      <parameter name="allowedMethods" value="log getCustomerByName updateCustomer getCustomerReputation"/>
+
+      <typeMapping
+        xmlns:ns="http://fhwedel.de"
+        qname="ns:Customer"
+        type="java:de.fhwedel.Customer"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://fhwedel.de"
+        qname="ns:UpdateFailed"
+        type="java:de.fhwedel.UpdateFailed"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://fhwedel.de"
+        qname="ns:UnknownCustomer"
+        type="java:de.fhwedel.UnknownCustomer"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

@@ -1,0 +1,12 @@
+[
+  [
+    "name" : "AssignInventoryToOrderItem",
+    "parameters" : [
+    	"contractPosition" : new ObjectDataType()
+    ],
+    "results" : [
+    	"result" : new ObjectDataType()
+    ],
+    "displayName" : "Assign inventory to Order-Item"
+  ]
+]

@@ -1,0 +1,100 @@
+package de.fhwedel;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
+@SuppressWarnings("serial")
+public class Contract implements Serializable {
+	
+	public enum DeliveryMethod {
+		
+		COMPLETE("Complete"),
+		PORTION("Portion");
+		
+		private String caption;
+
+		DeliveryMethod() {
+			this.caption = this.name();
+		}
+
+		public String toString() {
+			return this.caption;
+		}
+		
+	}
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+	private Integer id;
+	
+	private Integer contractNumber;
+
+	private DeliveryMethod deliveryMethod;
+
+	@ManyToOne(fetch=FetchType.EAGER)
+	private Customer customer;
+
+	//TODO: cascadeType default is? >_> no docs
+	@OneToMany(cascade = CascadeType.PERSIST)
+	private List<ContractPosition> contractPositions;
+
+	public Contract() {
+		this(null, null);
+	}
+
+	public Contract(Integer contractNumber, DeliveryMethod deliveryMethod) {
+		this.contractNumber = contractNumber;
+		this.deliveryMethod = deliveryMethod;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public Integer getContractNumber() {
+		return contractNumber;
+	}
+
+	public void setContractNumber(Integer contractNumber) {
+		this.contractNumber = contractNumber;
+	}
+
+	public DeliveryMethod getDeliveryMethod() {
+		return deliveryMethod;
+	}
+
+	public void setDeliveryMethod(DeliveryMethod deliveryMethod) {
+		this.deliveryMethod = deliveryMethod;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	@Override
+	public String toString() {
+		return "Contract "
+				+ "["
+				+ "id=" + id + ", "
+				+ "contractNumber=" + contractNumber + ", "
+				+ "deliveryMethod=" + deliveryMethod + ", "
+				+ "customer=" + customer + ", "
+				+ "contractPositions=" + contractPositions 
+				+ "]";
+	}
+
+}

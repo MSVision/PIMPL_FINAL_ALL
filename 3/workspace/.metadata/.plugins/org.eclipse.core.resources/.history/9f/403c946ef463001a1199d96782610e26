@@ -1,0 +1,56 @@
+package de.fhwedel;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@SuppressWarnings("serial")
+public class ShippingOrder implements Serializable {
+
+	@Id
+	@Column(updatable = false, nullable = false)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+	private Integer id;
+	
+	@Column(nullable = false)
+	private Integer shippingOrderNumber;
+	
+	@Column(nullable = true)
+	private String shippingNum; 
+	
+	@Column(nullable = true)
+	private String shippingService;
+
+	private List<ShippingPosition> shippingPositions;
+
+	public ShippingOrder() {
+		this(null, "", "");
+	}
+
+	public ShippingOrder(Integer shippingOrderNumber, String shippingNum, String shippingService) {
+		this.shippingOrderNumber = shippingOrderNumber;
+		this.shippingNum = shippingNum;
+		this.shippingService = shippingService;
+	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "ShippingContract (shippingConNum=" + shippingConNum + ", shippingNum=" + shippingNum
+				+ ", shippingService=" + shippingService + ", shippingPositions=" + shippingPositions + ")";
+		
+		return "ShippingPosition "
+		+ "["
+		+ "id=" + id + ", "
+		+ "quantity=" + quantity
+		+ "]";
+	}
+	
+}
